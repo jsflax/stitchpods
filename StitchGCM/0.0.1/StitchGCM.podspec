@@ -24,7 +24,7 @@ Pod::Spec.new do |s|
   s.frameworks = 'SafariServices'
   s.pod_target_xcconfig = {
     'FRAMEWORK_SEARCH_PATHS' => '$(inherited) $(PODS_ROOT)/GoogleCloudMessaging',
-    'OTHER_LDFLAGS' => '$(inherited) -undefined dynamic_lookup'
+    'OTHER_LDFLAGS' => '$(inherited) dynamic_lookup'
   }
   s.dependency "Google/CloudMessaging"
 
