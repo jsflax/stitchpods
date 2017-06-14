@@ -3,7 +3,7 @@ Pod::Spec.new do |s|
   s.version      = "0.0.1"
   s.authors		 = "MongoDB"
   s.homepage     = "https://stitch.mongodb.com"
-  s.summary      = "An SDK to use MongoDB's Baas Core features."
+  s.summary      = "An SDK to use MongoDB's Stitch Core features."
   s.license      = {
   						:type => "MIT",
   						:file => "LICENSE.md"
@@ -14,7 +14,7 @@ Pod::Spec.new do |s|
   					   	 :git => "https://git.zemingo.com/MongoBaaS/mongo-baas-core-ios.git",
   						 :tag => "#{s.version}"
   				   }
-  s.source_files  = "StitchCore/StitchCore/**/*.swift"
+  s.source_files  = "StitchCore/StitchCore/Source/**/*.swift"
   s.exclude_files = "StitchCore/StitchCore/Frameworks/Alamofire/**/*"
   s.requires_arc = true
   s.dependency "StitchLogger", "~> 0.0.1"
