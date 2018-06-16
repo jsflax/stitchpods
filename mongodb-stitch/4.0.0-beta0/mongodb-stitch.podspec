@@ -57,6 +57,10 @@ Pod::Spec.new do |spec|
 
   #This is due to some linking leakage, should be resolved by converting to Frameworks
   spec.user_target_xcconfig = {
+    'OTHER_LDFLAGS[sdk=iphoneos*]' => '-rpath $(PODS_TARGET_SRCROOT)/MobileSDKs/iphoneos/lib',
+    'OTHER_LDFLAGS[sdk=iphonesimulator*]' => '-rpath $(PODS_TARGET_SRCROOT)/MobileSDKs/iphoneos/lib',
+    'OTHER_LDFLAGS[sdk=appletvos*]' => '-rpath $(PODS_TARGET_SRCROOT)/MobileSDKs/appletvos/lib',
+    'OTHER_LDFLAGS[sdk=appletvsimulator*]' => '-rpath $(PODS_TARGET_SRCROOT)/MobileSDKs/appletvos/lib',
     'LIBRARY_SEARCH_PATHS[sdk=iphoneos*]'        => '$(PODS_TARGET_SRCROOT)/MobileSDKs/iphoneos/lib',
     'LIBRARY_SEARCH_PATHS[sdk=iphonesimulator*]' => '$(PODS_TARGET_SRCROOT)/MobileSDKs/iphoneos/lib',
     'LIBRARY_SEARCH_PATHS[sdk=appletvos*]'       => '$(PODS_TARGET_SRCROOT)/MobileSDKs/appletvos/lib',
@@ -340,6 +344,27 @@ Pod::Spec.new do |spec|
   
   # pod "mongodb-stitch/ios-sdk", "~> 4.0"
   spec.subspec "ios-sdk" do |sdk|
+    sdk.user_target_xcconfig = {
+      'OTHER_LDFLAGS[sdk=iphoneos*]' => '-rpath $(PODS_TARGET_SRCROOT)/MobileSDKs/iphoneos/lib',
+      'OTHER_LDFLAGS[sdk=iphonesimulator*]' => '-rpath $(PODS_TARGET_SRCROOT)/MobileSDKs/iphoneos/lib',
+      'OTHER_LDFLAGS[sdk=appletvos*]' => '-rpath $(PODS_TARGET_SRCROOT)/MobileSDKs/appletvos/lib',
+      'OTHER_LDFLAGS[sdk=appletvsimulator*]' => '-rpath $(PODS_TARGET_SRCROOT)/MobileSDKs/appletvos/lib',
+      'LIBRARY_SEARCH_PATHS[sdk=iphoneos*]'        => '$(PODS_TARGET_SRCROOT)/MobileSDKs/iphoneos/lib',
+      'LIBRARY_SEARCH_PATHS[sdk=iphonesimulator*]' => '$(PODS_TARGET_SRCROOT)/MobileSDKs/iphoneos/lib',
+      'LIBRARY_SEARCH_PATHS[sdk=appletvos*]'       => '$(PODS_TARGET_SRCROOT)/MobileSDKs/appletvos/lib',
+      'LIBRARY_SEARCH_PATHS[sdk=appletvsimulator*]'=> '$(PODS_TARGET_SRCROOT)/MobileSDKs/appletvos/lib',
+  
+      'SWIFT_INCLUDE_PATHS' => [
+        '"$(PODS_TARGET_SRCROOT)/MobileSDKs/include"',
+        '"$(PODS_TARGET_SRCROOT)/MobileSDKs/include/libbson-1.0"',
+        '"$(PODS_TARGET_SRCROOT)/MobileSDKs/include/libmongoc-1.0"',
+        '"$(PODS_TARGET_SRCROOT)/Sources/mongo_embedded"',
+        '"$(PODS_TARGET_SRCROOT)/Sources/libmongoc"',
+        '"$(PODS_TARGET_SRCROOT)/Sources/libbson"',
+      ].join(' '),
+  
+      "FRAMEWORK_SEARCH_PATHS" => ["$(PODS_TARGET_SRCROOT)/frameworks"].join(" ")
+    }
     sdk.preserve_paths = [
       "Sources/mongo_embedded/*.{h,modulemap}",
       "Sources/libbson/*.{h,modulemap}",
