@@ -119,7 +119,7 @@ Pod::Spec.new do |spec|
     subspec.tvos.vendored_libraries = TVOS_VL
   end
 
-  spec.xcconfig       = { 'FRAMEWORK_SEARCH_PATHS' => '"$(PODS_ROOT)/"' }
+  # spec.xcconfig       = { 'FRAMEWORK_SEARCH_PATHS' => '"$(PODS_ROOT)/"' }
 
   spec.subspec "mongo-swift" do |sub|
     self.configure_subspec sub
@@ -133,7 +133,7 @@ Pod::Spec.new do |spec|
 
     sub.source_files = "Core/StitchCoreSDK/Sources/StitchCoreSDK/**/*.swift"
     sub.dependency "mongodb-stitch/mongo-swift"
-    sub.xcconfig = { "FRAMEWORK_SEARCH_PATHS" => "$(PODS_ROOT)/mongodb-stitch/core-sdk"}
+    # sub.xcconfig = { "FRAMEWORK_SEARCH_PATHS" => "$(PODS_ROOT)/mongodb-stitch/core-sdk"}
     sub.vendored_frameworks = "MongoSwift.framework"
   end
 
@@ -144,80 +144,43 @@ Pod::Spec.new do |spec|
     sub.source_files = "Core/Services/StitchCoreAWSS3Service/Sources/StitchCoreAWSS3Service/**/*.swift"
     sub.dependency 'mongodb-stitch/mongo-swift'
     sub.dependency 'mongodb-stitch/core-sdk'
-    # csas.vendored_frameworks = "MongoSwift.framework"
   end
 
-  # # pod "mongodb-stitch/core-services-aws-ses", "~> 4.0"
-  # spec.subspec "core-services-aws-ses" do |csas|    
-  #   csas.preserve_paths = [
-  #     "Sources/mongo_embedded/*.{h,modulemap}",
-  #     "Sources/libbson/*.{h,modulemap}",
-  #     "Sources/libmongoc/*.{h,modulemap}",
-  #     "MobileSDKs/**/*",
-  #     "MobileSDKs/iphoneos/lib",
-  #     "MobileSDKs/iphoneos/lib/*",
-  #     "frameworks/**/*",
-  #   ]
-  #   csas.source_files = "Core/Services/StitchCoreAWSSESService/Sources/StitchCoreAWSSESService/**/*.swift"
-  #   csas.vendored_frameworks = [
-  #     "MongoSwift.framework", 
-  #     "StitchCoreSDK.framework"
-  #   ]
-  # end
+  # pod "mongodb-stitch/core-services-aws-ses", "~> 4.0"
+  spec.subspec "core-services-aws-ses" do |sub|    
+    self.configure_subspec sub
 
-  # # pod "mongodb-stitch/core-services-http", "~> 4.0"
-  # spec.subspec "core-services-http" do |csh|    
-  #   csh.preserve_paths = [
-  #     "Sources/mongo_embedded/*.{h,modulemap}",
-  #     "Sources/libbson/*.{h,modulemap}",
-  #     "Sources/libmongoc/*.{h,modulemap}",
-  #     "MobileSDKs/**/*",
-  #     "MobileSDKs/iphoneos/lib",
-  #     "MobileSDKs/iphoneos/lib/*",
-  #     "frameworks/**/*",
-  #   ]
-  #   csh.source_files = "Core/Services/StitchCoreHTTPService/Sources/StitchCoreHTTPService/**/*.swift"
-  #   csh.vendored_frameworks = [
-  #     "MongoSwift.framework", 
-  #     "StitchCoreSDK.framework"
-  #   ]
-  # end
+    sub.source_files = "Core/Services/StitchCoreAWSSESService/Sources/StitchCoreAWSSESService/**/*.swift"
+    sub.dependency 'mongodb-stitch/mongo-swift'
+    sub.dependency 'mongodb-stitch/core-sdk'
+  end
 
-  # # pod "mongodb-stitch/core-services-mongodb-remote", "~> 4.0"
-  # spec.subspec "core-services-mongodb-remote" do |csmr|    
-  #   csmr.preserve_paths = [
-  #     "Sources/mongo_embedded/*.{h,modulemap}",
-  #     "Sources/libbson/*.{h,modulemap}",
-  #     "Sources/libmongoc/*.{h,modulemap}",
-  #     "MobileSDKs/**/*",
-  #     "MobileSDKs/iphoneos/lib",
-  #     "MobileSDKs/iphoneos/lib/*",
-  #     "frameworks/**/*",
-  #   ]
-  #   csmr.source_files = "Core/Services/StitchCoreRemoteMongoDBService/Sources/StitchCoreRemoteMongoDBService/**/*.swift"
-  #   csmr.vendored_frameworks = [
-  #     "MongoSwift.framework", 
-  #     "StitchCoreSDK.framework"
-  #   ]
-  # end
+  # pod "mongodb-stitch/core-services-http", "~> 4.0"
+  spec.subspec "core-services-http" do |sub|    
+    self.configure_subspec sub
 
-  # # pod "mongodb-stitch/core-services-twilio", "~> 4.0"
-  # spec.subspec "core-services-twilio" do |cst|
-  #   cst.preserve_paths = [
-  #     "Sources/mongo_embedded/*.{h,modulemap}",
-  #     "Sources/libbson/*.{h,modulemap}",
-  #     "Sources/libmongoc/*.{h,modulemap}",
-  #     "MobileSDKs/**/*",
-  #     "MobileSDKs/iphoneos/lib",
-  #     "MobileSDKs/iphoneos/lib/*",
-  #     "frameworks/**/*",
-  #   ]
-  #   cst.source_files = "Core/Services/StitchCoreTwilioService/Sources/StitchCoreTwilioService/**/*.swift"
-  #   cst.vendored_frameworks = [
-  #     "MongoSwift.framework", 
-  #     "StitchCoreSDK.framework"
-  #   ]
-  # end
+    sub.source_files = "Core/Services/StitchCoreHTTPService/Sources/StitchCoreHTTPService/**/*.swift"
+    sub.dependency 'mongodb-stitch/mongo-swift'
+    sub.dependency 'mongodb-stitch/core-sdk'
+  end
+
+  # pod "mongodb-stitch/core-services-mongodb-remote", "~> 4.0"
+  spec.subspec "core-services-mongodb-remote" do |sub|    
+    self.configure_subspec sub
+
+    sub.source_files = "Core/Services/StitchCoreRemoteMongoDBService/Sources/StitchCoreRemoteMongoDBService/**/*.swift"
+    sub.dependency 'mongodb-stitch/mongo-swift'
+    sub.dependency 'mongodb-stitch/core-sdk'
+  end
+
+  # pod "mongodb-stitch/core-services-twilio", "~> 4.0"
+  spec.subspec "core-services-twilio" do |sub|
+    self.configure_subspec sub
+
+    sub.source_files = "Core/Services/StitchCoreTwilioService/Sources/StitchCoreTwilioService/**/*.swift"
+    sub.dependency 'mongodb-stitch/mongo-swift'
+    sub.dependency 'mongodb-stitch/core-sdk'
+  end
 
   # spec.subspec "core-services-mongodb-local" do |isml|
   #   isml.preserve_paths = [
@@ -242,10 +205,9 @@ Pod::Spec.new do |spec|
     self.configure_subspec sub
 
     sub.source_files = "iOS/StitchCore/StitchCore/**/*.swift"
+
     sub.dependency 'mongodb-stitch/mongo-swift'
     sub.dependency 'mongodb-stitch/core-sdk'
-    sub.vendored_frameworks = "MongoSwift.framework"
-    #sub.xcconfig = { "FRAMEWORK_SEARCH_PATHS" => "$(PODS_ROOT)/mongodb-stitch/ios-core"}
   end
 
   # pod "mongodb-stitch/ios-services-aws-s3", "~> 4.0"
