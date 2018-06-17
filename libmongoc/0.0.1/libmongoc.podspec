@@ -18,7 +18,7 @@ Pod::Spec.new do |spec|
 
     spec.preserve_path = [
         'libmongoc/libmongoc/module.modulemap', 
-        # 'libmongoc/libmongoc/**/*.h'
+        'libmongoc/libmongoc/**/*.h'
     ]
     spec.module_map = 'libmongoc/libmongoc/module.modulemap'
 
@@ -43,6 +43,5 @@ Pod::Spec.new do |spec|
         'HEADER_SEARCH_PATHS' => '$(PODS_ROOT)/libmongoc/libmongoc/libmongoc',
         'SWIFT_INCLUDE_PATHS' => '$(PODS_ROOT)/libmongoc/libmongoc/libmongoc'
     }
-    
     spec.dependency 'libbson', '~> 0.0.1'
 end
