@@ -16,8 +16,8 @@ Pod::Spec.new do |spec|
 
     spec.prepare_command = "sh build.sh"
 
-    spec.preserve_path = 'libmongoc/libmongoc/**/*.{h,modulemap}'
-    spec.module_map = 'libmongoc/libmongoc/module.modulemap'
+    spec.preserve_path = ['libmongoc/libmongoc.modulemap', 'libmongoc/libmongoc/**/*.{h,modulemap}']
+    spec.module_map = 'libmongoc/libmongoc.modulemap'
 
     spec.source_files = 'libmongoc/libmongoc/**/*.h'
     spec.public_header_files = 'libmongoc/libmongoc/**/*.h'
