@@ -256,7 +256,7 @@ Pod::Spec.new do |spec|
     sub.dependency 'mongodb-stitch/core-sdk'
     sub.vendored_frameworks = [
       "MongoSwift.framework",
-      "StitchCoreSDK.framework"
+      #"StitchCoreSDK.framework"
     ]
     sub.xcconfig = { "FRAMEWORK_SEARCH_PATHS" => "$(PODS_ROOT)/ios-core"}
   end
