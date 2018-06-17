@@ -33,6 +33,7 @@ Pod::Spec.new do |spec|
 
     spec.pod_target_xcconfig = paths
     spec.xcconfig = paths
-
+    spec.user_target_xcconfig = paths
+    
     spec.dependency 'libbson', '~> 0.0.1'
 end
