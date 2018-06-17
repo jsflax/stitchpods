@@ -21,10 +21,13 @@ Pod::Spec.new do |spec|
         # 'libmongoc/libbson/**/*.h'
     ]
     # spec.module_map = 'libmongoc/libbson.modulemap'
-    spec.xcconfig = { 
+    paths = { 
         'HEADER_SEARCH_PATHS' => '$(PODS_ROOT)/libbson/libmongoc/libbson', 
         'SWIFT_INCLUDE_PATHS' => '$(PODS_ROOT)/libbson/libmongoc/libbson'
     }
+    spec.pod_target_xcconfig = paths
+    spec.xcconfig = paths
+    
     spec.source_files = 'libmongoc/libbson/**/*.h'
     spec.public_header_files = 'libmongoc/libbson/**/*.h'
     spec.vendored_libraries = 'libmongoc/lib/libbson-1.0.dylib'
