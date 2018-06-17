@@ -31,9 +31,18 @@ Pod::Spec.new do |spec|
         'SWIFT_INCLUDE_PATHS' => '$(PODS_ROOT)/libmongoc/libmongoc/libmongoc'
     }
 
-    spec.pod_target_xcconfig = paths
-    spec.xcconfig = paths
-    spec.user_target_xcconfig = paths
+    spec.pod_target_xcconfig = { 
+        'HEADER_SEARCH_PATHS' => '$(PODS_ROOT)/libmongoc/libmongoc/libmongoc',
+        'SWIFT_INCLUDE_PATHS' => '$(PODS_ROOT)/libmongoc/libmongoc/libmongoc'
+    }
+    spec.xcconfig = { 
+        'HEADER_SEARCH_PATHS' => '$(PODS_ROOT)/libmongoc/libmongoc/libmongoc',
+        'SWIFT_INCLUDE_PATHS' => '$(PODS_ROOT)/libmongoc/libmongoc/libmongoc'
+    }
+    spec.user_target_xcconfig = { 
+        'HEADER_SEARCH_PATHS' => '$(PODS_ROOT)/libmongoc/libmongoc/libmongoc',
+        'SWIFT_INCLUDE_PATHS' => '$(PODS_ROOT)/libmongoc/libmongoc/libmongoc'
+    }
     
     spec.dependency 'libbson', '~> 0.0.1'
 end
