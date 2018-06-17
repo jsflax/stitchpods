@@ -17,7 +17,7 @@ Pod::Spec.new do |spec|
     spec.prepare_command = "sh build.sh"
 
     spec.preserve_path = [
-        'libmongoc/libbson.modulemap', 
+        'libmongoc/libbson/module.modulemap', 
         # 'libmongoc/libbson/**/*.h'
     ]
     # spec.module_map = 'libmongoc/libbson.modulemap'
