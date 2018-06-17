@@ -258,7 +258,7 @@ Pod::Spec.new do |spec|
       "MongoSwift.framework",
       #"StitchCoreSDK.framework"
     ]
-    sub.xcconfig = { "FRAMEWORK_SEARCH_PATHS" => "$(PODS_ROOT)/ios-core"}
+    #sub.xcconfig = { "FRAMEWORK_SEARCH_PATHS" => "$(PODS_ROOT)/ios-core"}
   end
 
   # # pod "mongodb-stitch/ios-services-aws-s3", "~> 4.0"
