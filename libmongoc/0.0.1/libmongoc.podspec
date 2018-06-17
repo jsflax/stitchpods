@@ -17,7 +17,7 @@ Pod::Spec.new do |spec|
     spec.prepare_command = "sh build.sh"
 
     spec.preserve_path = [
-        'libmongoc/libmongoc.modulemap', 
+        'libmongoc/libmongoc/module.modulemap', 
         # 'libmongoc/libmongoc/**/*.h'
     ]
     #spec.module_map = 'libmongoc/libmongoc.modulemap'
@@ -32,7 +32,7 @@ Pod::Spec.new do |spec|
     #  }
 
     spec.xcconfig = { 
-        # 'HEADER_SEARCH_PATHS' => '$(PODS_ROOT)/libmongoc/libmongoc', 
+        'HEADER_SEARCH_PATHS' => '$(PODS_ROOT)/libmongoc/libmongoc',
         'SWIFT_INCLUDE_PATHS' => '$(PODS_ROOT)/libmongoc/libmongoc'
     }
 
