@@ -1,4 +1,39 @@
-IOS_VL = ["MobileSDKs/iphoneos/lib/libmongoc-1.0.dylib", "MobileSDKs/iphoneos/lib/libbson-1.0.dylib"]
+
+  
+Pod::Spec.new do |spec|
+  spec.name       = "mongodb-stitch"
+  spec.version    = "4.0.0-beta0"
+  spec.summary    = "Stitch"
+  spec.homepage   = "https://github.com/jsflax/stitch-ios-sdk"
+  spec.license    = "Apache2"
+  spec.authors    = {
+    "Adam Chelminski" => "adam.chelminski@mongodb.com",
+    "Jason Flax" => "jason.flax@mongodb.com",
+    "Eric Daniels" => "eric.daniels@mongodb.com"
+  }
+  spec.platform = :ios, "11.3"
+  spec.source     = {
+    :git => "https://github.com/jsflax/stitch-ios-sdk.git",
+    :branch => "TestLove",
+    :submodules => true
+  }
+  spec.ios.deployment_target = "11.3"
+  spec.swift_version = "4.1"
+  spec.requires_arc = true
+  #spec.default_subspec = 'mongodb-stitch'
+  
+  spec.prepare_command = 'sh build.sh'
+
+  PP = [
+    "Sources/mongo_embedded/*.{h,modulemap}",
+    "Sources/libbson/*.{h,modulemap}",
+    "Sources/libmongoc/*.{h,modulemap}",
+    "MobileSDKs",
+    "MongoSwift.framework",
+    "StitchCoreSDK.framework"
+  ]
+
+  IOS_VL = ["MobileSDKs/iphoneos/lib/libmongoc-1.0.dylib", "MobileSDKs/iphoneos/lib/libbson-1.0.dylib"]
   TVOS_VL = ["MobileSDKs/iphoneos/lib/libmongoc-1.0.dylib", "MobileSDKs/iphoneos/lib/libbson-1.0.dylib"]
   
   PTXC = {
@@ -27,41 +62,8 @@ IOS_VL = ["MobileSDKs/iphoneos/lib/libmongoc-1.0.dylib", "MobileSDKs/iphoneos/li
     'LIBRARY_SEARCH_PATHS[sdk=appletvos*]'       => '$(PODS_ROOT)/MongoMobile/MobileSDKs/appletvos/lib',
     'LIBRARY_SEARCH_PATHS[sdk=appletvsimulator*]'=> '$(PODS_ROOT)/MongoMobile/MobileSDKs/appletvos/lib',
   }
-  
-Pod::Spec.new do |spec|
-  spec.name       = "mongodb-stitch"
-  spec.version    = "4.0.0-beta0"
-  spec.summary    = "Stitch"
-  spec.homepage   = "https://github.com/jsflax/stitch-ios-sdk"
-  spec.license    = "Apache2"
-  spec.authors    = {
-    "Adam Chelminski" => "adam.chelminski@mongodb.com",
-    "Jason Flax" => "jason.flax@mongodb.com",
-    "Eric Daniels" => "eric.daniels@mongodb.com"
-  }
-  spec.platform = :ios, "11.3"
-  spec.source     = {
-    :git => "https://github.com/jsflax/stitch-ios-sdk.git",
-    :branch => "TestLove",
-    :submodules => true
-  }
-  spec.ios.deployment_target = "11.3"
-  spec.swift_version = "4.1"
-  spec.requires_arc = true
-  #spec.default_subspec = 'mongodb-stitch'
-  
-  spec.prepare_command = 'sh build.sh'
 
-  pp = [
-    "Sources/mongo_embedded/*.{h,modulemap}",
-    "Sources/libbson/*.{h,modulemap}",
-    "Sources/libmongoc/*.{h,modulemap}",
-    "MobileSDKs",
-    "MongoSwift.framework",
-    "StitchCoreSDK.framework"
-  ]
-
-  spec.preserve_paths = pp
+  spec.preserve_paths = PP
   spec.ios.vendored_library = IOS_VL
   spec.tvos.vendored_library = TVOS_VL
   spec.pod_target_xcconfig = PTXC
