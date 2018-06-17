@@ -20,7 +20,7 @@ Pod::Spec.new do |spec|
         'libmongoc/libmongoc/module.modulemap', 
         # 'libmongoc/libmongoc/**/*.h'
     ]
-    #spec.module_map = 'libmongoc/libmongoc.modulemap'
+    spec.module_map = 'libmongoc/libmongoc/module.modulemap'
 
     spec.source_files = 'libmongoc/libmongoc/**/*.h'
     spec.public_header_files = 'libmongoc/libmongoc/**/*.h'
