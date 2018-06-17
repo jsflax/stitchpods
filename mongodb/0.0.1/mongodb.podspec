@@ -17,6 +17,8 @@ Pod::Spec.new do |spec|
     spec.preserve_path = 'build.sh'
     spec.prepare_command = "sh build.sh"
 
+    spec.module_map = 'libmongoc/libmongoc/module.modulemap'
+    
     spec.subspec "libbson" do |bson|
         bson.source_files = 'libmongoc/libbson/**/*.h'
         bson.public_header_files = 'libmongoc/libbson/**/*.h'
