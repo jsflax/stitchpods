@@ -22,6 +22,10 @@ Pod::Spec.new do |spec|
     spec.source_files = 'libmongoc/libmongoc/**/*.h'
     spec.public_header_files = 'libmongoc/libmongoc/**/*.h'
     spec.vendored_libraries = 'libmongoc/lib/libmongoc-1.0.dylib'
+    spec.xcconfig = { 
+        #'HEADER_SEARCH_PATHS' => '$(SDKROOT)/usr/include/libxml2', 
+        'SWIFT_INCLUDE_PATHS' => '$(PODS_ROOT)/libmongoc/libmongoc'
+    }
 
     spec.dependency 'libbson', '~> 0.0.1'
 end
