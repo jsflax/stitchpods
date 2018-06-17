@@ -16,20 +16,23 @@ Pod::Spec.new do |spec|
 
     spec.prepare_command = "sh build.sh"
 
-    spec.preserve_path = ['libmongoc/libmongoc.modulemap', 'libmongoc/libmongoc/**/*.{h,modulemap}']
-    spec.module_map = 'libmongoc/libmongoc.modulemap'
+    spec.preserve_path = [
+        'libmongoc/libmongoc.modulemap', 
+        # 'libmongoc/libmongoc/**/*.h'
+    ]
+    #spec.module_map = 'libmongoc/libmongoc.modulemap'
 
     spec.source_files = 'libmongoc/libmongoc/**/*.h'
     spec.public_header_files = 'libmongoc/libmongoc/**/*.h'
     spec.vendored_libraries = 'libmongoc/lib/libmongoc-1.0.dylib'
 
-    spec.pod_target_xcconfig = { 
-        'HEADER_SEARCH_PATHS' => '$(PODS_ROOT)/libmongoc/libmongoc', 
-        'SWIFT_INCLUDE_PATHS' => '$(PODS_ROOT)/libmongoc/libmongoc'
-     }
+    # spec.pod_target_xcconfig = { 
+    #     'HEADER_SEARCH_PATHS' => '$(PODS_ROOT)/libmongoc/libmongoc', 
+    #     'SWIFT_INCLUDE_PATHS' => '$(PODS_ROOT)/libmongoc/libmongoc'
+    #  }
 
     spec.xcconfig = { 
-        'HEADER_SEARCH_PATHS' => '$(PODS_ROOT)/libmongoc/libmongoc', 
+        # 'HEADER_SEARCH_PATHS' => '$(PODS_ROOT)/libmongoc/libmongoc', 
         'SWIFT_INCLUDE_PATHS' => '$(PODS_ROOT)/libmongoc/libmongoc'
     }
 
