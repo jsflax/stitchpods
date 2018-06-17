@@ -32,8 +32,8 @@ Pod::Spec.new do |spec|
     #  }
 
     spec.xcconfig = { 
-        'HEADER_SEARCH_PATHS' => '$(PODS_ROOT)/libmongoc/libmongoc',
-        'SWIFT_INCLUDE_PATHS' => '$(PODS_ROOT)/libmongoc/libmongoc'
+        'HEADER_SEARCH_PATHS' => '$(PODS_ROOT)/libmongoc/libmongoc/libmongoc',
+        'SWIFT_INCLUDE_PATHS' => '$(PODS_ROOT)/libmongoc/libmongoc/libmongoc'
     }
 
     spec.dependency 'libbson', '~> 0.0.1'
