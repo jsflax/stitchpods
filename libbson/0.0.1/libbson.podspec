@@ -20,9 +20,7 @@ Pod::Spec.new do |spec|
         'libmongoc/libbson.modulemap', 
         # 'libmongoc/libbson/**/*.h'
     ]
-    spec.module_map = 'libmongoc/libbson.modulemap'
-
-    spec.module_map = 'libmongoc/libbson.modulemap'
+    # spec.module_map = 'libmongoc/libbson.modulemap'
     
     spec.source_files = 'libmongoc/libbson/**/*.h'
     spec.public_header_files = 'libmongoc/libbson/**/*.h'
