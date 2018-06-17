@@ -8,8 +8,9 @@ PP = [
   "MongoSwift.framework",
   "StitchCoreSDK.framework"
 ]
-IOS_VL = "MobileSDKs/iphoneos/lib/*.dylib"
-TVOS_VL = "MobileSDKs/appletvos/lib/*.dylib"
+IOS_VL = ["MobileSDKs/iphoneos/lib/libmongoc-1.0.dylib", "MobileSDKs/iphoneos/lib/libbson-1.0.dylib"]
+TVOS_VL = ["MobileSDKs/iphoneos/lib/libmongoc-1.0.dylib", "MobileSDKs/iphoneos/lib/libbson-1.0.dylib"]
+
 PTXC = {
   'OTHER_LDFLAGS[sdk=iphoneos*]' => '-rpath $(PODS_TARGET_SRCROOT)/MobileSDKs/iphoneos/lib',
   'OTHER_LDFLAGS[sdk=iphonesimulator*]' => '-rpath $(PODS_TARGET_SRCROOT)/MobileSDKs/iphoneos/lib',
