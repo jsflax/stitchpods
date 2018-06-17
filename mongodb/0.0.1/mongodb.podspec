@@ -21,17 +21,20 @@ Pod::Spec.new do |spec|
         bson.source_files = 'libmongoc/libbson/**/*.h'
         bson.public_header_files = 'libmongoc/libbson/**/*.h'
         bson.vendored_libraries = 'libmongoc/lib/libbson-1.0.dylib'
+        bson.preserve_path = 'libmongoc/libbson/module.modulemap'
     end
 
     spec.subspec "libmongoc" do |mongoc|
         mongoc.source_files = 'libmongoc/libmongoc/**/*.h'
         mongoc.public_header_files = 'libmongoc/libmongoc/**/*.h'
         mongoc.vendored_libraries = 'libmongoc/lib/libmongoc-1.0.dylib'
+        mongoc.preserve_path = 'libmongoc/libmongoc/module.modulemap'
     end
 
-    spec.subspec "mongo_embedded" do |embedded|
-        embedded.source_files = "libmongoc/mongo_embedded/**/*.h"
-        embedded.public_header_files = "libmongoc/mongo_embedded/**/*.h"
-        embedded.vendored_libraries = "libmongoc/lib/*.dylib"
-    end
+    # spec.subspec "mongo_embedded" do |embedded|
+    #     embedded.source_files = "libmongoc/mongo_embedded/**/*.h"
+    #     embedded.public_header_files = "libmongoc/mongo_embedded/**/*.h"
+    #     embedded.vendored_libraries = "libmongoc/lib/*.dylib"
+    #     embedded.preserve_path = 'libmongoc/mongo_embedded/module.modulemap'
+    # end
 end
