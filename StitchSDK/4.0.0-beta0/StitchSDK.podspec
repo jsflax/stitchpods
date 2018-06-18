@@ -41,10 +41,10 @@ Pod::Spec.new do |spec|
     'OTHER_LDFLAGS[sdk=iphonesimulator*]' => '-rpath $(PODS_TARGET_SRCROOT)/MobileSDKs/iphoneos/lib',
     'OTHER_LDFLAGS[sdk=appletvos*]' => '-rpath $(PODS_TARGET_SRCROOT)/MobileSDKs/appletvos/lib',
     'OTHER_LDFLAGS[sdk=appletvsimulator*]' => '-rpath $(PODS_TARGET_SRCROOT)/MobileSDKs/appletvos/lib',
-    # 'LIBRARY_SEARCH_PATHS[sdk=iphoneos*]'        => '$(PODS_TARGET_SRCROOT)/MobileSDKs/iphoneos/lib',
-    # 'LIBRARY_SEARCH_PATHS[sdk=iphonesimulator*]' => '$(PODS_TARGET_SRCROOT)/MobileSDKs/iphoneos/lib',
-    # 'LIBRARY_SEARCH_PATHS[sdk=appletvos*]'       => '$(PODS_TARGET_SRCROOT)/MobileSDKs/appletvos/lib',
-    # 'LIBRARY_SEARCH_PATHS[sdk=appletvsimulator*]'=> '$(PODS_TARGET_SRCROOT)/MobileSDKs/appletvos/lib',
+    'LIBRARY_SEARCH_PATHS[sdk=iphoneos*]'        => '$(PODS_TARGET_SRCROOT)/MobileSDKs/iphoneos/lib',
+    'LIBRARY_SEARCH_PATHS[sdk=iphonesimulator*]' => '$(PODS_TARGET_SRCROOT)/MobileSDKs/iphoneos/lib',
+    'LIBRARY_SEARCH_PATHS[sdk=appletvos*]'       => '$(PODS_TARGET_SRCROOT)/MobileSDKs/appletvos/lib',
+    'LIBRARY_SEARCH_PATHS[sdk=appletvsimulator*]'=> '$(PODS_TARGET_SRCROOT)/MobileSDKs/appletvos/lib',
   
     'SWIFT_INCLUDE_PATHS' => [
       '"$(PODS_TARGET_SRCROOT)/MobileSDKs/include"',
@@ -58,10 +58,10 @@ Pod::Spec.new do |spec|
   }
 
   UTXC ||= {
-    'OTHER_LDFLAGS[sdk=iphoneos*]' => '-rpath $(PODS_TARGET_SRCROOT)/MobileSDKs/iphoneos/lib',
-    'OTHER_LDFLAGS[sdk=iphonesimulator*]' => '-rpath $(PODS_TARGET_SRCROOT)/MobileSDKs/iphoneos/lib',
-    'OTHER_LDFLAGS[sdk=appletvos*]' => '-rpath $(PODS_TARGET_SRCROOT)/MobileSDKs/appletvos/lib',
-    'OTHER_LDFLAGS[sdk=appletvsimulator*]' => '-rpath $(PODS_TARGET_SRCROOT)/MobileSDKs/appletvos/lib',
+    'OTHER_LDFLAGS[sdk=iphoneos*]' => '-rpath $(PODS_ROOT)/MobileSDKs/iphoneos/lib',
+    'OTHER_LDFLAGS[sdk=iphonesimulator*]' => '-rpath $(PODS_ROOT)/MobileSDKs/iphoneos/lib',
+    'OTHER_LDFLAGS[sdk=appletvos*]' => '-rpath $(PODS_ROOT)/MobileSDKs/appletvos/lib',
+    'OTHER_LDFLAGS[sdk=appletvsimulator*]' => '-rpath $(PODS_ROOT)/MobileSDKs/appletvos/lib',
 
     'LIBRARY_SEARCH_PATHS[sdk=iphoneos*]'        => '$(PODS_ROOT)/MobileSDKs/iphoneos/lib',
     'LIBRARY_SEARCH_PATHS[sdk=iphonesimulator*]' => '$(PODS_ROOT)/MobileSDKs/iphoneos/lib',
@@ -72,8 +72,8 @@ Pod::Spec.new do |spec|
   # spec.preserve_paths = PP
   # spec.ios.vendored_library = IOS_VL
   # spec.tvos.vendored_library = TVOS_VL
-  spec.pod_target_xcconfig = PTXC
-  spec.user_target_xcconfig = UTXC
+  # spec.pod_target_xcconfig = PTXC
+  # spec.user_target_xcconfig = UTXC
 
   def self.configure(subspec)
     subspec.preserve_paths = PP
