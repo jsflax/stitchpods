@@ -16,6 +16,8 @@ Pod::Spec.new do |spec|
       :submodules => true
     }
   
+    spec.default_subspec = 'StitchCoreSDK'
+    
     spec.ios.deployment_target = "11.3"
     spec.swift_version = "4.1"
     spec.requires_arc = true
@@ -27,10 +29,8 @@ Pod::Spec.new do |spec|
         --sources=Sources/#{spec.name}
     CMD
 
-    # # spec.exclude_files = "dist/**/*{Exports}.swift"
   
-    spec.source_files = "dist/#{spec.name}/**/*.swift"
-    # spec.dependency 'StitchCoreSDK/MongoSwift'
+    # spec.source_files = "dist/#{spec.name}/**/*.swift"
     
     spec.subspec "MongoSwift" do |mongo_swift|
       mongo_swift.pod_target_xcconfig = {
@@ -74,5 +74,11 @@ Pod::Spec.new do |spec|
       mongo_swift.tvos.vendored_library = libs
 
       mongo_swift.source_files = "vendor/Sources/MongoSwift/**/*.swift"
+    end
+
+    spec.subspec "StitchCoreSDK" do |core|
+      core.source_files = "dist/#{spec.name}/**/*.swift"
+
+      core.dependency "StitchCoreSDK/MongoSwift"
     end
 end
