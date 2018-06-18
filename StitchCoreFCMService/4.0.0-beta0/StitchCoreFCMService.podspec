@@ -12,7 +12,7 @@ Pod::Spec.new do |spec|
     spec.platform = :ios, "8.0"
     spec.source     = {
       :git => "https://github.com/jsflax/stitch-ios-sdk.git",
-      :branch => "TestLove",
+      :branch => "STITCH-1293",
       :submodules => true
     }
   
@@ -25,5 +25,4 @@ Pod::Spec.new do |spec|
     spec.source_files = "dist/#{spec.name}/**/*.swift"
 
     spec.dependency 'StitchCoreSDK', '~> 4.0.0-beta0'
-    # spec.dependency 'StitchCoreSDK/MongoSwift', '~> 4.0.0-beta0'
 end
