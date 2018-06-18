@@ -1,7 +1,7 @@
 Pod::Spec.new do |spec|
-    spec.name       = "StitchCoreAWSS3Service"
+    spec.name       = File.basename(__FILE__, '.podspec')
     spec.version    = "4.0.0-beta0"
-    spec.summary    = "Stitch Core AWS S3 Module"
+    spec.summary    = "#{__FILE__} Module"
     spec.homepage   = "https://github.com/jsflax/stitch-ios-sdk"
     spec.license    = "Apache2"
     spec.authors    = {
