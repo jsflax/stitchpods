@@ -127,7 +127,6 @@ Pod::Spec.new do |spec|
     self.configure core_aws_s3_service
 
     core_aws_s3_service.source_files = "SDK/StitchCoreAWSS3Service/**/*.swift"
-    # core_aws_s3_service.dependency 'StitchSDK/MongoSwift'
     core_aws_s3_service.dependency 'StitchSDK/StitchCoreSDK'
   end
 
@@ -186,13 +185,12 @@ Pod::Spec.new do |spec|
   # end
 
   # pod "StitchSDK/ios-core", "~> 4.0"
-  # spec.subspec "StitchCore" do |ios_core|
-  #   self.configure ios_core
+  spec.subspec "StitchCore" do |ios_core|
+    self.configure ios_core
 
-  #   ios_core.source_files = "SDK/StitchCore/**/*.swift"
-    
-  #   ios_core.dependency 'StitchSDK/StitchCoreSDK'
-  # end
+    ios_core.source_files = "SDK/StitchCore/**/*.swift"
+    ios_core.dependency 'StitchSDK/StitchCoreSDK'
+  end
 
   # # pod "StitchSDK/ios-services-aws-s3", "~> 4.0"
   # spec.subspec "StitchAWSS3Service" do |sub|
