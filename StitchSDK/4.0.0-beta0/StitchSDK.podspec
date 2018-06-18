@@ -73,12 +73,12 @@ Pod::Spec.new do |spec|
   # spec.ios.vendored_library = IOS_VL
   # spec.tvos.vendored_library = TVOS_VL
   spec.pod_target_xcconfig = PTXC
-  # spec.user_target_xcconfig = UTXC
+  spec.user_target_xcconfig = UTXC
 
   def self.configure(subspec)
     subspec.preserve_paths = PP
     subspec.pod_target_xcconfig = PTXC
-    # subspec.user_target_xcconfig = UTXC
+    subspec.user_target_xcconfig = UTXC
     
     subspec.exclude_files = "SDK/**/*{Exports}.swift"
   end
@@ -107,12 +107,12 @@ Pod::Spec.new do |spec|
   end
 
   # pod "StitchSDK/StitchCoreAWSS3Service", "~> 4.0"
-  spec.subspec "StitchCoreAWSS3Service" do |core_aws_s3_service|
-    self.configure core_aws_s3_service
+  # spec.subspec "StitchCoreAWSS3Service" do |core_aws_s3_service|
+  #   self.configure core_aws_s3_service
 
-    core_aws_s3_service.source_files = "SDK/StitchCoreAWSS3Service/**/*.swift"
-    core_aws_s3_service.dependency 'StitchSDK/StitchCoreSDK'
-  end
+  #   core_aws_s3_service.source_files = "SDK/StitchCoreAWSS3Service/**/*.swift"
+  #   core_aws_s3_service.dependency 'StitchSDK/StitchCoreSDK'
+  # end
 
   # # pod "StitchSDK/core-services-aws-ses", "~> 4.0"
   # spec.subspec "core-services-aws-ses" do |sub|    
