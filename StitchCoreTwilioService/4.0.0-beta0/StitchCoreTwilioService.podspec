@@ -12,7 +12,7 @@ Pod::Spec.new do |spec|
     spec.platform = :ios, "8.0"
     spec.source     = {
       :git => "https://github.com/jsflax/stitch-ios-sdk.git",
-      :branch => "TestLove",
+      :branch => "STITCH-1293",
       :submodules => true
     }
   
@@ -20,9 +20,7 @@ Pod::Spec.new do |spec|
     spec.swift_version = "4.1"
     spec.requires_arc = true
     
-    spec.prepare_command = "sh prep_pods.sh --module=#{spec.name}"
-
-    spec.exclude_files = "dist/**/*{Exports}.swift"
+    spec.prepare_command = "sh prep_pods.sh --module=#{spec.name} --sources=Sources/#{spec.name}"
   
     spec.source_files = "dist/#{spec.name}/**/*.swift"
 
