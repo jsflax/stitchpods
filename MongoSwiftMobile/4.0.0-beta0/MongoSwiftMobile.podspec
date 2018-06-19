@@ -43,7 +43,7 @@ Pod::Spec.new do |spec|
   
     spec.user_target_xcconfig = {
       "OTHER_LDFLAGS[sdk=iphoneos*]" => "-rpath $(PODS_ROOT)/#{spec.name}/vendor/MobileSDKs/iphoneos/lib",
-      "OTHER_LDFLAGS[sdk=iphonesimulator*]" => "-rpath $(PODS_ROOT)/#{spec.name}vendor/MobileSDKs/iphoneos/lib",
+      "OTHER_LDFLAGS[sdk=iphonesimulator*]" => "-rpath $(PODS_ROOT)/#{spec.name}/vendor/MobileSDKs/iphoneos/lib",
       "OTHER_LDFLAGS[sdk=appletvos*]" => "-rpath $(PODS_ROOT)/#{spec.name}/vendor/MobileSDKs/appletvos/lib",
       "OTHER_LDFLAGS[sdk=appletvsimulator*]" => "-rpath $(PODS_ROOT)/#{spec.name}/vendor/MobileSDKs/appletvos/lib",
   
