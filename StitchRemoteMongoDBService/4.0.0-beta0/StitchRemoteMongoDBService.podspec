@@ -22,8 +22,6 @@ Pod::Spec.new do |spec|
     
     spec.prepare_command = "sh prep_pods.sh --module=#{spec.name} --sources=#{spec.name}"
 
-    spec.module_name = 'StitchSDK'
-
     spec.source_files = "dist/#{spec.name}/**/*.swift"
 
     spec.dependency 'StitchCore', '~> 4.0.0-beta0'
