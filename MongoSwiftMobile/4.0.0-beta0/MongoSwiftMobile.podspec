@@ -42,15 +42,15 @@ Pod::Spec.new do |spec|
     }
   
     spec.user_target_xcconfig = {
-      'OTHER_LDFLAGS[sdk=iphoneos*]' => '-rpath $(PODS_ROOT)/StitchSDK/vendor/MobileSDKs/iphoneos/lib',
-      'OTHER_LDFLAGS[sdk=iphonesimulator*]' => '-rpath $(PODS_ROOT)/StitchSDK/vendor/MobileSDKs/iphoneos/lib',
-      'OTHER_LDFLAGS[sdk=appletvos*]' => '-rpath $(PODS_ROOT)/StitchSDK/vendor/MobileSDKs/appletvos/lib',
-      'OTHER_LDFLAGS[sdk=appletvsimulator*]' => '-rpath $(PODS_ROOT)/StitchSDK/vendor/MobileSDKs/appletvos/lib',
+      'OTHER_LDFLAGS[sdk=iphoneos*]' => '-rpath $(PODS_ROOT)/vendor/MobileSDKs/iphoneos/lib',
+      'OTHER_LDFLAGS[sdk=iphonesimulator*]' => '-rpath $(PODS_ROOT)/vendor/MobileSDKs/iphoneos/lib',
+      'OTHER_LDFLAGS[sdk=appletvos*]' => '-rpath $(PODS_ROOT)/vendor/MobileSDKs/appletvos/lib',
+      'OTHER_LDFLAGS[sdk=appletvsimulator*]' => '-rpath $(PODS_ROOT)/vendor/MobileSDKs/appletvos/lib',
   
-      'LIBRARY_SEARCH_PATHS[sdk=iphoneos*]'        => '$(PODS_ROOT)/StitchSDK/vendor/MobileSDKs/iphoneos/lib',
-      'LIBRARY_SEARCH_PATHS[sdk=iphonesimulator*]' => '$(PODS_ROOT)/StitchSDK/vendor/MobileSDKs/iphoneos/lib',
-      'LIBRARY_SEARCH_PATHS[sdk=appletvos*]'       => '$(PODS_ROOT)/StitchSDK/vendor/MobileSDKs/appletvos/lib',
-      'LIBRARY_SEARCH_PATHS[sdk=appletvsimulator*]'=> '$(PODS_ROOT)/StitchSDK/vendor/MobileSDKs/appletvos/lib',
+      'LIBRARY_SEARCH_PATHS[sdk=iphoneos*]'        => '$(PODS_ROOT)/vendor/MobileSDKs/iphoneos/lib',
+      'LIBRARY_SEARCH_PATHS[sdk=iphonesimulator*]' => '$(PODS_ROOT)/vendor/MobileSDKs/iphoneos/lib',
+      'LIBRARY_SEARCH_PATHS[sdk=appletvos*]'       => '$(PODS_ROOT)/vendor/MobileSDKs/appletvos/lib',
+      'LIBRARY_SEARCH_PATHS[sdk=appletvsimulator*]'=> '$(PODS_ROOT)/vendor/MobileSDKs/appletvos/lib',
     }
   
     spec.preserve_paths = "vendor"
