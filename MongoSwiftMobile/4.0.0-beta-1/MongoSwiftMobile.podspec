@@ -51,6 +51,8 @@ Pod::Spec.new do |spec|
       "LIBRARY_SEARCH_PATHS[sdk=iphonesimulator*]" => "$(PODS_ROOT)/#{spec.name}/vendor/MobileSDKs/iphoneos/lib",
       "LIBRARY_SEARCH_PATHS[sdk=appletvos*]"       => "$(PODS_ROOT)/#{spec.name}/vendor/MobileSDKs/appletvos/lib",
       "LIBRARY_SEARCH_PATHS[sdk=appletvsimulator*]"=> "$(PODS_ROOT)/#{spec.name}/vendor/MobileSDKs/appletvos/lib",
+
+      "ENABLE_BITCODE" => "NO"
     }
   
     spec.preserve_paths = "vendor"
