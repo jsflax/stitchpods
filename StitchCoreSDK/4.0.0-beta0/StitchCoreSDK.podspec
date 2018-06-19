@@ -9,13 +9,13 @@ Pod::Spec.new do |spec|
       "Adam Chelminski" => "adam.chelminski@mongodb.com",
       "Eric Daniels" => "eric.daniels@mongodb.com",
     }
-    spec.platform = :ios, "8.0"
+    spec.platform = :ios, "11.0"
     spec.source     = {
       :git => "https://github.com/jsflax/stitch-ios-sdk.git",
       :branch => "STITCH-1293"
     }
       
-    spec.ios.deployment_target = "11.3"
+    spec.ios.deployment_target = "11.0"
     spec.swift_version = "4.1"
     spec.requires_arc = true
     
@@ -25,6 +25,9 @@ Pod::Spec.new do |spec|
         --module=#{spec.name} \
         --sources=Sources/#{spec.name}
     CMD
+
+    spec.module_name = 'StitchSDK'
+    
 
     spec.source_files = "dist/#{spec.name}/**/*.swift"
 
