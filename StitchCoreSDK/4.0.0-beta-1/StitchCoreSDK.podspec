@@ -14,7 +14,8 @@ Pod::Spec.new do |spec|
       :git => "https://github.com/mongodb/stitch-ios-sdk.git",
       :branch => "master"
     }
-      
+    
+    spec.pod_target_xcconfig = { "ENABLE_BITCODE" => "NO" }
     spec.ios.deployment_target = "11.0"
     spec.swift_version = "4.1"
     spec.requires_arc = true
