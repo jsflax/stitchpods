@@ -38,7 +38,9 @@ Pod::Spec.new do |spec|
         "$(PODS_TARGET_SRCROOT)/vendor/MobileSDKs/include/libmongoc-1.0",
         "$(PODS_TARGET_SRCROOT)/vendor/Sources/libmongoc",
         "$(PODS_TARGET_SRCROOT)/vendor/Sources/libbson",
-      ].join(" ")
+      ].join(" "),
+
+      "ENABLE_BITCODE" => "NO"
     }
   
     spec.user_target_xcconfig = {
@@ -58,7 +60,9 @@ Pod::Spec.new do |spec|
     spec.preserve_paths = "vendor"
     libs = [
       "vendor/MobileSDKs/iphoneos/lib/libmongoc-1.0.dylib", 
-      "vendor/MobileSDKs/iphoneos/lib/libbson-1.0.dylib"
+      "vendor/MobileSDKs/iphoneos/lib/libmongoc-1.0.0.dylib",
+      "vendor/MobileSDKs/iphoneos/lib/libbson-1.0.dylib",
+      "vendor/MobileSDKs/iphoneos/lib/libbson-1.0.0.dylib"
     ]
     spec.ios.vendored_library = libs
     spec.tvos.vendored_library = libs
