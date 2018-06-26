@@ -16,13 +16,13 @@ Pod::Spec.new do |spec|
     # spec.prepare_command = "sh build.sh"
 
     spec.pod_target_xcconfig = { 
-      'LIBRARY_SEARCH_PATHS' => '$(PODS_TARGET_SRCROOT)/libbson.framework/Frameworks',
-      'SWIFT_INCLUDE_PATHS' => '$(PODS_TARGET_SRCROOT)/libbson.framework/Modules'
+      'LIBRARY_SEARCH_PATHS' => '$(PODS_TARGET_SRCROOT)/libbson/libbson.framework/Frameworks',
+      'SWIFT_INCLUDE_PATHS' => '$(PODS_TARGET_SRCROOT)/libbson/libbson.framework/Modules'
     }
 
     spec.user_target_xcconfig = { 
-      'LIBRARY_SEARCH_PATHS' => '$(PODS_ROOT)/libbson.framework/Frameworks',
-      'SWIFT_INCLUDE_PATHS' => '$(PODS_ROOT)/libbson.framework/Modules'
+      'LIBRARY_SEARCH_PATHS' => '$(PODS_ROOT)/libbson/libbson.framework/Frameworks',
+      'SWIFT_INCLUDE_PATHS' => '$(PODS_ROOT)/libbson/libbson.framework/Modules'
     }
 
     spec.vendored_framework = "libbson.framework"
