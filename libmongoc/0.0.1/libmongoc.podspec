@@ -10,38 +10,31 @@ Pod::Spec.new do |spec|
     spec.platform = :ios, "11.3"
     spec.source     = {
       :git => "https://github.com/jsflax/libmongoc.git",
-      :branch => "master",
-      :submodules => true
+      :branch => "master"
     }
 
-    spec.prepare_command = "sh build.sh"
+    # spec.prepare_command = "sh build.sh"
+    spec.vendored_framework = "libmongoc.framework"
 
-    spec.preserve_path = [
-        'libmongoc/libmongoc/module.modulemap', 
-        'libmongoc/libmongoc/**/*.h'
-    ]
-    spec.module_map = 'libmongoc/libmongoc/module.modulemap'
+    # spec.preserve_path = [
+    #     'libmongoc/libmongoc/module.modulemap', 
+    #     # 'libmongoc/libmongoc/**/*.h'
+    # ]
+    # #spec.module_map = 'libmongoc/libmongoc.modulemap'
 
-    spec.source_files = 'libmongoc/libmongoc/**/*.h'
-    spec.public_header_files = 'libmongoc/libmongoc/**/*.h'
-    spec.vendored_libraries = 'libmongoc/lib/libmongoc-1.0.dylib'
+    # spec.source_files = 'libmongoc/libmongoc/**/*.h'
+    # spec.public_header_files = 'libmongoc/libmongoc/**/*.h'
+    # spec.vendored_libraries = 'libmongoc/lib/libmongoc-1.0.dylib'
 
-    paths = { 
-        'HEADER_SEARCH_PATHS' => '$(PODS_ROOT)/libmongoc/libmongoc/libmongoc',
-        'SWIFT_INCLUDE_PATHS' => '$(PODS_ROOT)/libmongoc/libmongoc/libmongoc'
-    }
+    # # spec.pod_target_xcconfig = { 
+    # #     'HEADER_SEARCH_PATHS' => '$(PODS_ROOT)/libmongoc/libmongoc', 
+    # #     'SWIFT_INCLUDE_PATHS' => '$(PODS_ROOT)/libmongoc/libmongoc'
+    # #  }
 
-    spec.pod_target_xcconfig = { 
-        'HEADER_SEARCH_PATHS' => '$(PODS_ROOT)/libmongoc/libmongoc/libmongoc',
-        'SWIFT_INCLUDE_PATHS' => '$(PODS_ROOT)/libmongoc/libmongoc/libmongoc'
-    }
-    spec.xcconfig = { 
-        'HEADER_SEARCH_PATHS' => '$(PODS_ROOT)/libmongoc/libmongoc/libmongoc',
-        'SWIFT_INCLUDE_PATHS' => '$(PODS_ROOT)/libmongoc/libmongoc/libmongoc'
-    }
-    spec.user_target_xcconfig = { 
-        'HEADER_SEARCH_PATHS' => '$(PODS_ROOT)/libmongoc/libmongoc/libmongoc',
-        'SWIFT_INCLUDE_PATHS' => '$(PODS_ROOT)/libmongoc/libmongoc/libmongoc'
-    }
+    # spec.xcconfig = { 
+    #     'HEADER_SEARCH_PATHS' => '$(PODS_ROOT)/libmongoc/libmongoc',
+    #     'SWIFT_INCLUDE_PATHS' => '$(PODS_ROOT)/libmongoc/libmongoc'
+    # }
+
     spec.dependency 'libbson', '~> 0.0.1'
 end
