@@ -10,11 +10,10 @@ Pod::Spec.new do |spec|
     spec.platform = :ios, "11.3"
     spec.source     = {
       :git => "https://github.com/jsflax/libmongoc.git",
-      :branch => "master",
-      :submodules => true
+      :branch => "master"
     }
 
-    spec.prepare_command = "sh build.sh"
+    # spec.prepare_command = "sh build.sh"
 
     spec.vendored_framework = "libbson.framework"
 end
