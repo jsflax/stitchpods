@@ -12,12 +12,12 @@ Pod::Spec.new do |spec|
 
     spec.source = {
       :git => "https://github.com/jsflax/stitch-ios-sdk.git",
-      :branch => "Frameworkify",
-      # :tag => '4.0.0'
+      :branch => "PATCH_4.0.1", 
+      # :tag => '4.0.1'
     }
 
     spec.prepare_command = <<-CMD
-      sh scripts/download_mongoswift.sh;
+      sh scripts/download_dependencies.sh;
       python scripts/build_frameworks.py;
     CMD
 
@@ -30,7 +30,7 @@ Pod::Spec.new do |spec|
     spec.user_target_xcconfig = {
       'FRAMEWORK_SEARCH_PATHS' => "$(PODS_ROOT)/#{spec.name}/Frameworks/ios"
     }
-    spec.ios.deployment_target = "11.3"
+    spec.ios.deployment_target = "11.0"
     spec.tvos.deployment_target = "10.2"
     spec.watchos.deployment_target = "4.3"
     spec.macos.deployment_target = "10.10"
